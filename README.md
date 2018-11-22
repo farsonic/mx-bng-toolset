@@ -5,7 +5,7 @@
 
 
 ##### RADIUS Configuration
-set access profile aaa-profile authentication-order radius
+```set access profile aaa-profile authentication-order radius
 set access profile aaa-profile radius authentication-server 192.168.100.2
 set access profile aaa-profile radius accounting-server 192.168.100.2
 set access profile aaa-profile radius options interface-description-format exclude-sub-interface
@@ -24,4 +24,4 @@ set access profile aaa-profile accounting accounting-stop-on-access-deny
 set access profile aaa-profile accounting immediate-update
 set access profile aaa-profile accounting coa-immediate-update
 set access profile aaa-profile accounting update-interval 10
-set access profile aaa-profile accounting statistics volume-time
+set access profile aaa-profile accounting statistics volume-time```

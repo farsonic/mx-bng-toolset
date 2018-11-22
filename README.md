@@ -39,6 +39,10 @@ set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-
 set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-unit" family inet unnumbered-address lo0.0
 ```
 
-
-
+##### Dynamic Interface creation
+```set interfaces ge-1/0/0 flexible-vlan-tagging
+set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-tag accept pppoe
+set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-tag ranges 1-2000
+set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-tag access-profile aaa-profile
+```
 

@@ -1,6 +1,7 @@
 #### Basic MX BNG Configuration
 
 ##### MX Global 
+In order to use some of the newer subscriber features the following configuration needs to be added to the system. Changing network-services mode will requrie the router to be rebooted. 
 ```
 set chassis network-services enhanced-ip
 set system services subscriber-management enable

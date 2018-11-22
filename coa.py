@@ -5,15 +5,15 @@ from pyrad import dictionary
 from pyrad import packet
 import sys
 
-if len(sys.argv) != 7:
-  print ("usage: coa.py <coa> <host> <secret> <session-id> <ingress-policy> <egress-policy>")
+if len(sys.argv) != 6:
+  print ("usage: coa.py <host> <secret> <session-id> <ingress-policy> <egress-policy>")
   sys.exit(1)
 
-ADDRESS = sys.argv[2]
-SECRET = sys.argv[3]
-ATTRIBUTES = {"Acct-Session-Id": sys.argv[4]}
-ATTRIBUTES["ERX-Ingress-Policy-Name"] = sys.argv[5]
-ATTRIBUTES["ERX-Egress-Policy-Name"] = sys.argv[6]
+ADDRESS = sys.argv[1]
+SECRET = sys.argv[2]
+ATTRIBUTES = {"Acct-Session-Id": sys.argv[3]}
+ATTRIBUTES["ERX-Ingress-Policy-Name"] = sys.argv[4]
+ATTRIBUTES["ERX-Egress-Policy-Name"] = sys.argv[5]
 
 client = Client(server=ADDRESS, secret=SECRET, dict=dictionary.Dictionary("dictionary"))
 client.timeout = 30

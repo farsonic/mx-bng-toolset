@@ -1,5 +1,4 @@
-# Basic MX BNG Configuration
-
+#### Basic MX BNG Configuration
 ##### RADIUS Configuration
 ```set access profile aaa-profile authentication-order radius
 set access profile aaa-profile radius authentication-server <Server IP>

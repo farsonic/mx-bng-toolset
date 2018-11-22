@@ -1,3 +1,7 @@
+#### Initial FreeRadius Setup
+
+#### FreeRadius - mySQL integration
+
 #### Basic Jnuiper MX-Series BNG Configuration
 
 ##### Global settings 

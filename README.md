@@ -1,8 +1,4 @@
-# mx-bng-toolset
-
-
-
-
+# Basic MX BNG Configuration
 
 ##### RADIUS Configuration
 ```set access profile aaa-profile authentication-order radius

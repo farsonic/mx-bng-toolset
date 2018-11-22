@@ -24,16 +24,21 @@ set access profile aaa-profile accounting immediate-update
 set access profile aaa-profile accounting coa-immediate-update
 set access profile aaa-profile accounting update-interval 10
 set access profile aaa-profile accounting statistics volume-time
-set access-profile aaa-profile```
+set access-profile aaa-profile
+```
 
-##### RADIUS Configuration
+##### Dynamic Profile
 ```set dynamic-profiles vlan-single-tag interfaces "$junos-interface-ifd-name" unit "$junos-interface-unit" no-traps
 set dynamic-profiles vlan-single-tag interfaces "$junos-interface-ifd-name" unit "$junos-interface-unit" vlan-id "$junos-vlan-id"
 set dynamic-profiles vlan-single-tag interfaces "$junos-interface-ifd-name" unit "$junos-interface-unit" family pppoe dynamic-profile pppoe-client-profile
-
 set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-unit" ppp-options chap
 set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-unit" ppp-options pap
 set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-unit" pppoe-options underlying-interface "$junos-underlying-interface"
 set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-unit" pppoe-options server
 set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-unit" keepalives interval 30
-set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-unit" family inet unnumbered-address lo0.0```
+set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-unit" family inet unnumbered-address lo0.0
+```
+
+
+
+

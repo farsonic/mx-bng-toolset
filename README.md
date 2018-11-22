@@ -1,4 +1,10 @@
 #### Basic MX BNG Configuration
+
+##### MX Global 
+```set chassis network-services enhanced-ip
+
+```
+
 ##### RADIUS Configuration
 ```set access profile aaa-profile authentication-order radius
 set access profile aaa-profile radius authentication-server <Server IP>

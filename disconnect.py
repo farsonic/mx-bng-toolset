@@ -5,7 +5,7 @@ from pyrad import dictionary
 from pyrad import packet
 import sys
 
-if len(sys.argv) != 7:
+if len(sys.argv) != 4:
   print ("usage: disconnect.py <host> <secret> <session-id>")
   sys.exit(1)
 

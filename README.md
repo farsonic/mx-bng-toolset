@@ -1,8 +1,9 @@
 #### Basic MX BNG Configuration
 
 ##### MX Global 
-```set chassis network-services enhanced-ip
-
+```
+set chassis network-services enhanced-ip
+set system services subscriber-management enable
 ```
 
 ##### RADIUS Configuration

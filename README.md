@@ -46,10 +46,10 @@ set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-
 
 ##### Dynamic Interface creation
 The Dynamic profiles are then assocated with one or more physical interfaces. In this example the interface will accept any VLAN tag between 1 and 2000 and then apply the PPPoE profile. Once successfully authenticated a new dynamic interface will be created in the system. 
-```set interfaces ge-1/0/0 flexible-vlan-tagging
-set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-tag accept pppoe
-set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-tag ranges 1-2000
-set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-tag access-profile aaa-profile
+```set interfaces <interface> flexible-vlan-tagging
+set interfaces <interface> auto-configure vlan-ranges dynamic-profile vlan-single-tag accept pppoe
+set interfaces <interface> auto-configure vlan-ranges dynamic-profile vlan-single-tag ranges 1-2000
+set interfaces <interface> auto-configure vlan-ranges dynamic-profile vlan-single-tag access-profile aaa-profile
 ```
 
 ##### Routing Instance

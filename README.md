@@ -8,6 +8,7 @@ set system services subscriber-management enable
 ```
 
 ##### RADIUS Configuration
+Set up access to the RADIUS Server first for both Authentication and Accounting. The configuration example uses the standard ports but obviously both the server IP address and port numbers should be adjusted to suit your setup. 
 ```set access profile aaa-profile authentication-order radius
 set access profile aaa-profile radius authentication-server <Server IP>
 set access profile aaa-profile radius accounting-server <Server IP>
@@ -31,6 +32,7 @@ set access-profile aaa-profile
 ```
 
 ##### Dynamic Profile
+A dynamic profile defines the parameters of an interface when a user authenticates. The example here is to be attached to a physical interface that has one vlan tag. This will not work on an untagged interface or stacked VLAN tagged interface. 
 ```set dynamic-profiles vlan-single-tag interfaces "$junos-interface-ifd-name" unit "$junos-interface-unit" no-traps
 set dynamic-profiles vlan-single-tag interfaces "$junos-interface-ifd-name" unit "$junos-interface-unit" vlan-id "$junos-vlan-id"
 set dynamic-profiles vlan-single-tag interfaces "$junos-interface-ifd-name" unit "$junos-interface-unit" family pppoe dynamic-profile pppoe-client-profile
@@ -43,6 +45,7 @@ set dynamic-profiles pppoe-client-profile interfaces pp0 unit "$junos-interface-
 ```
 
 ##### Dynamic Interface creation
+The Dynamic profiles are then assocated with one or more physical interfaces. In this example the interface will accept any VLAN tag between 1 and 2000 and then apply the PPPoE profile. Once successfully authenticated a new dynamic interface will be created in the system. 
 ```set interfaces ge-1/0/0 flexible-vlan-tagging
 set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-tag accept pppoe
 set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-tag ranges 1-2000
@@ -50,6 +53,7 @@ set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-t
 ```
 
 ##### Routing Instance
+Optionally, subscribers can be placed into a dedicated routing-instance. This can be defined in the dynamic profile or as part of the return RADIUS VSA when authentication occurs. 
 ```set routing-instances subscribers instance-type vrf
 set routing-instances subscribers access address-assignment high-utilization 90
 set routing-instances subscribers access address-assignment abated-utilization 70

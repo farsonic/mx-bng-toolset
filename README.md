@@ -1,4 +1,4 @@
-#### Basic MX BNG Configuration
+#### Basic Jnuiper MX-Series BNG Configuration
 
 ##### MX Global 
 In order to use some of the newer subscriber features the following configuration needs to be added to the system. Changing network-services mode will requrie the router to be rebooted. 

@@ -31,7 +31,7 @@ set access profile aaa-profile accounting statistics volume-time
 set access-profile aaa-profile
 ```
 
-##### Dynamic Profile
+##### Dynamic Profile (Single VLAN Tag)
 A dynamic profile defines the parameters of an interface when a user authenticates. The example here is to be attached to a physical interface that has one vlan tag. This will not work on an untagged interface or stacked VLAN tagged interface. 
 ```set dynamic-profiles vlan-single-tag interfaces "$junos-interface-ifd-name" unit "$junos-interface-unit" no-traps
 set dynamic-profiles vlan-single-tag interfaces "$junos-interface-ifd-name" unit "$junos-interface-unit" vlan-id "$junos-vlan-id"

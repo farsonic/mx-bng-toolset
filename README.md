@@ -46,3 +46,16 @@ set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-t
 set interfaces ge-1/0/0 auto-configure vlan-ranges dynamic-profile vlan-single-tag access-profile aaa-profile
 ```
 
+##### Routing Instance
+```set routing-instances subscribers instance-type vrf
+set routing-instances subscribers access address-assignment high-utilization 90
+set routing-instances subscribers access address-assignment abated-utilization 70
+set routing-instances subscribers access address-assignment pool subscriber_pool family inet network 10.100.0.0/16
+set routing-instances subscribers access address-assignment pool subscriber_pool family inet range subscriber_range low 10.100.0.0
+set routing-instances subscribers access address-assignment pool subscriber_pool family inet range subscriber_range high 10.100.255.255
+set routing-instances subscribers interface lo0.100
+set routing-instances subscribers route-distinguisher 100:101
+set routing-instances subscribers vrf-target target:100:101
+set routing-instances subscribers vrf-table-label
+```
+

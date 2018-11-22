@@ -4,8 +4,7 @@
 
 
 
-RADIUS Configuration
-====================
+#####RADIUS Configuration
 set access profile aaa-profile authentication-order radius
 set access profile aaa-profile radius authentication-server 192.168.100.2
 set access profile aaa-profile radius accounting-server 192.168.100.2
